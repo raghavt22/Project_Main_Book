@@ -28,18 +28,27 @@ public class Display_Class
                 case 1 ->
                 {
                     //System.out.println("Creating a book record");
-                    DataBase_Class.dbInsert();
+                    //DataBase_Class.dbInsert();
 
-                   // System.out.println("Please Enter the book details ");
+                    System.out.println("Please Enter the book details ");
+                    //Taking inputs for Book Details
+                    System.out.print("Book Name :");
+                    String bk_nm=sc.nextLine();
+                    System.out.print("Author Name :");
+                    String atr_nm=sc.nextLine();
+                    System.out.print("Genre : ");
+                    String gnr=sc.nextLine();
+                    System.out.print("Price : ");
+                    int pri=sc.nextInt();
 
-                    /*System.out.print("Book Name :"); String bk_nm=sc.next();
-                    System.out.print("Author Name :"); String atr_nm=sc.next();
-                    System.out.print("Genre : "); String gnr=sc.next();
-                    System.out.println("Price : "); int pri=sc.nextInt();
+                    Book_Record br=new Book_Record(bk_nm,atr_nm,gnr,pri);
+                    //creating a new object of Book_Record Class
 
-                    Book_Record br=new Book_Record(bk_nm,atr_nm,gnr,pri); //creating a new object of Book_Record Class
+                    DataBase_Class.databaseInsert(br);
+                    //passing the book record object to db insert method, that will store it in database
 
-                    System.out.println(br); //printing the overloaded toString method of class Object */
+                    System.out.println(br);
+                    //printing the overloaded toString method of class Object */
 
                     System.out.println("Book Record Created Successfully"); //printing a success message
 
