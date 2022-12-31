@@ -18,6 +18,7 @@ public class Display_Class
             System.out.println(" ");
             System.out.print("Enter your response here : -> ");
             count = sc.nextInt();
+            sc.nextLine();
             if (count < 1 || count > 4)
             {
                 System.out.println("Please Enter your response in the range of 1-4 only, Enter again : -> ");
@@ -27,12 +28,9 @@ public class Display_Class
             {
                 case 1 ->
                 {
-                    //System.out.println("Creating a book record");
-                    //DataBase_Class.dbInsert();
-
                     System.out.println("Please Enter the book details ");
                     //Taking inputs for Book Details
-                    System.out.print("Book Name :");
+                    System.out.print("Book Name: ");
                     String bk_nm=sc.nextLine();
                     System.out.print("Author Name :");
                     String atr_nm=sc.nextLine();
