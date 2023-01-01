@@ -1,34 +1,34 @@
-public class Book_Record
+class BookRecord
 {
-    private String book_name;
-    private String author;
+    private String bookName;
+    private String authorName;
     private String genre;
     private int price;
 
-    public Book_Record(String book_Name, String author )
+    public BookRecord(String bookName, String authorName )
     {
-        this.book_name=book_Name;
-        this.author=author;
+        this.bookName=bookName;
+        this.authorName=authorName;
     }
-    public Book_Record(String book_name,String author, String genre,int price)
+    public BookRecord(String bookName,String authorName, String genre,int price)
     {
-        this.book_name=book_name;
-        this.author=author;
+        this.bookName=bookName;
+        this.authorName=authorName;
         this.genre=genre;
         this.price=price;
     }
 
-    public String getBook_name() {
-        return book_name;
+    public String getBookName() {
+        return bookName;
     }
-    public void setBook_name(String book_name) {
-        this.book_name = book_name;
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
     }
-    public String getAuthor() {
-        return author;
+    public String getAuthorName() {
+        return authorName;
     }
     public void setAuthor(String author) {
-        this.author = author;
+        this.authorName = authorName;
     }
     public String getGenre() {
         return genre;
@@ -46,10 +46,10 @@ public class Book_Record
     public String toString()
     {
         return "BOOK DETAILS"+
-                "Book Name : "+getBook_name()+
-                "Author Name : "+getAuthor()+
-                "Genre : "+getGenre()+
-                "Price : "+getPrice();
+                "/nBook Name : "+getBookName()+
+                "/nAuthor Name : "+getAuthorName()+
+                "/nGenre : "+getGenre()+
+                "/nPrice : "+getPrice();
     }
 
 }

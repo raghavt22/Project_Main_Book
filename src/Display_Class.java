@@ -3,10 +3,10 @@ import java.util.Scanner;
 
 public class Display_Class
 {
-    static Scanner sc=new Scanner(System.in);
+    Scanner sc=new Scanner(System.in);
     static int count;
     static String resp;
-    public static void mainDisplayMethod() throws Exception {
+    public void mainDisplayMethod() throws Exception {
         do
         {
             System.out.println(" /****** MENU DRIVEN PROGRAM ******/ ");
@@ -18,6 +18,7 @@ public class Display_Class
             System.out.println(" ");
             System.out.print("Enter your response here : -> ");
             count = sc.nextInt();
+            sc.nextLine();
             if (count < 1 || count > 4)
             {
                 System.out.println("Please Enter your response in the range of 1-4 only, Enter again : -> ");
@@ -32,19 +33,16 @@ public class Display_Class
 
                     System.out.println("Please Enter the book details ");
                     //Taking inputs for Book Details
-                    System.out.print("Book Name :");
-                    String bk_nm=sc.nextLine();
-                    System.out.print("Author Name :");
-                    String atr_nm=sc.nextLine();
-                    System.out.print("Genre : ");
-                    String gnr=sc.nextLine();
-                    System.out.print("Price : ");
-                    int pri=sc.nextInt();
+                    System.out.print("Book Name :");String bkNm=sc.nextLine();
+                    System.out.print("Author Name :");String athrNm=sc.nextLine();
+                    System.out.print("Genre : ");String gnr=sc.nextLine();
+                    System.out.print("Price : ");int pri=sc.nextInt();
 
-                    Book_Record br=new Book_Record(bk_nm,atr_nm,gnr,pri);
+                    BookRecord br=new BookRecord(bkNm,athrNm,gnr,pri);
                     //creating a new object of Book_Record Class
 
-                    DataBase_Class.databaseInsert(br);
+                    DataBaseClass dbc=new DataBaseClass();
+                    dbc.databaseInsert(br);
                     //passing the book record object to db insert method, that will store it in database
 
                     System.out.println(br);
