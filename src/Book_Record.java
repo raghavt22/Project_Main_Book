@@ -4,6 +4,9 @@ class BookRecord
     private String authorName;
     private String genre;
     private int price;
+    private int bookId;
+
+    public BookRecord(){}
 
     public BookRecord(String bookName, String authorName )
     {
@@ -12,6 +15,14 @@ class BookRecord
     }
     public BookRecord(String bookName,String authorName, String genre,int price)
     {
+        this.bookName=bookName;
+        this.authorName=authorName;
+        this.genre=genre;
+        this.price=price;
+    }
+    public BookRecord(int bookId,String bookName,String authorName, String genre,int price)
+    {
+        this.bookId=bookId;
         this.bookName=bookName;
         this.authorName=authorName;
         this.genre=genre;
@@ -46,10 +57,14 @@ class BookRecord
     public String toString()
     {
         return "BOOK DETAILS"+
+                "/nBook Id : "+getBookId()+
                 "/nBook Name : "+getBookName()+
                 "/nAuthor Name : "+getAuthorName()+
                 "/nGenre : "+getGenre()+
                 "/nPrice : "+getPrice();
     }
 
+    public int getBookId() {
+        return bookId;
+    }
 }
