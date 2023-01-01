@@ -4,10 +4,14 @@ import java.util.Set;
 
 public class DataBase_Class
 {
+    private static Connection con;
+    public DataBase_Class() throws  Exception{
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        con=DriverManager.getConnection("jdbc:mysql://localhost:3306/mymenuprogram","root","admin1234");
+    }
    public static void dbInsert() throws Exception
    {
-       Class.forName("com.mysql.cj.jdbc.Driver");
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/mymenuprogram","root","admin1234");
+
        PreparedStatement ps=con.prepareStatement("insert into bookrecords values(?,?,?,?)");
        Scanner sc=new Scanner(System.in);
        System.out.println("Enter the Book Details");
